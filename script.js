@@ -34,6 +34,7 @@ const operatorButton = operatorPad.querySelectorAll('button')
 const progress = document.getElementById('progress')
 const equalToButton = document.getElementById('equalTo')
 const clearButton = document.getElementById('clear')
+const undoButton = document.getElementById('undo')
 
 numberButton.forEach(button => {
     button.addEventListener('click',function(){
@@ -75,6 +76,14 @@ equalToButton.addEventListener('click',function(){
         
     }
     currentEquation.pop()
+    if(currentEquation.includes('=')){
+        let equalToPosition = currentEquation.indexOf('=')
+        currentEquation=currentEquation.slice(equalToPosition+1)
+        currentEquation.push('=')
+        progress.textContent=currentEquation.join('')
+        currentEquation.pop()
+        result.textContent=''
+    }
     while(currentEquation.length>=3){
         if (currentEquation.includes('×')||currentEquation.includes('÷')){
             let operatorPosition = currentEquation.indexOf('×')
@@ -87,7 +96,6 @@ equalToButton.addEventListener('click',function(){
             let stepResult = operate(num1,num2,operator)
             if(operatorPosition-1>=0){
                 currentEquation.splice(operatorPosition-1,3,stepResult)
-                console.log(currentEquation)
             }else{
                 break;
             }
@@ -106,7 +114,12 @@ equalToButton.addEventListener('click',function(){
             }
         }
     }
-    result.textContent=currentEquation
+    if(Number.isInteger(currentEquation[0])){
+        result.textContent=currentEquation[0]
+    }else{
+        result.textContent=currentEquation[0].toFixed(2)
+    }
+    
 })
 
 clearButton.addEventListener('click',function(){
@@ -117,4 +130,14 @@ clearButton.addEventListener('click',function(){
     calResult=''
     progress.textContent=''
     result.textContent=''
+})
+
+undoButton.addEventListener('click',function(){
+    let resultLenth = result.textContent.length
+    if (resultLenth>1){
+        result.textContent = result.textContent.substring(0,resultLenth-1)
+    }else if (resultLenth==1){
+        result.textContent=''
+    }
+    
 })

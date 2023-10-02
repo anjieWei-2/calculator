@@ -1,22 +1,99 @@
-.calculater{
-    height: 90vh;
-    width: 50vw;
+body{
+    background-color: #f4f4f4;
+    color: #373737;
+    font-family: 'Young Serif', serif;
 }
+.calculater{
+    height: 70vh;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+    background-color: #373737 ;
+}
+
+.calculater div{
+    background-color: #c0b283 ;
+}
+
+.operator{
+    border-top: none;
+    display: flex;
+    height: 50px;
+    font-size: 35px;
+}
+
+.operator button{
+    font-family: 'Young Serif', serif;
+    flex: 0 0 25%;
+    background-color: #dcd0c0 ;
+    font-size: 35px;
+    color: #373737;
+}
+
 .numberPad{
+    flex: 0 0 100%;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    padding-top: 5px;
 }
 .numberPad button{
+    font-family: 'Young Serif', serif;
     flex: 0 0 33.3%;
     width: 33.3%;
     box-sizing: border-box;
+    height: 100%;
+    background-color: #f4f4f4;
+    font-size: 50px;
+    height: 70px;
+    border: 1px solid #373737;
 }
 #result{
-    border: 2px solid grey;
-    height: 10%;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: end;
+    line-height: 70px;
+    font-size: 50px;
 }
 #progress{
-    border: 2px solid grey;
-    height: 5%;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: end;
+    line-height: 45px;
+    font-size: 35px;
+}
+#pad{
+    height: 75%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#clear{
+    font-family: 'Young Serif', serif;
+    margin-top: 5px;
+    width: 30%;
+    height: 70px;
+    font-size: 50px;
+}
+
+#undo{
+    font-family: 'Young Serif', serif;
+    width: 30%;
+    height: 70px;
+    margin: 0;
+    font-size: 50px;
+}
+
+#equalTo{
+    font-family: 'Young Serif', serif;
+    width: 35%;
+    height: 70px;
+    margin: 0;
+    font-size: 50px;
 }
