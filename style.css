@@ -1,0 +1,22 @@
+.calculater{
+    height: 90vh;
+    width: 50vw;
+}
+.numberPad{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.numberPad button{
+    flex: 0 0 33.3%;
+    width: 33.3%;
+    box-sizing: border-box;
+}
+#result{
+    border: 2px solid grey;
+    height: 10%;
+}
+#progress{
+    border: 2px solid grey;
+    height: 5%;
+}
